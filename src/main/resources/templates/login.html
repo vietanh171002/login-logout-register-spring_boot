@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+    <h1>Login</h1>
+    <form method="post" action="#" th:action="login" th:object="${loginrequest}">
+        Email: <input type="text" th:field="*{email}" />
+        <div th:if="${#field.hasErrors('email')}" th:errors="*{email}"></div>
+        <br/><br/> Password: <input type="password" th:field="*{password}" /><br/><br/>
+        <div th:if="${#field.hasErrors('password')}" th:errors="*{password}"></div>
+        <button type="submit">Submit Form</button>
+    </form>
+</body>
+
+</html>
